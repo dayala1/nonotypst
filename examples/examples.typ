@@ -1,0 +1,176 @@
+// EXAMPLES OF USE
+#import "../lib.typ": *
+#import "./examples-matrices.typ": *
+
+#set page(margin: 5mm, width: auto, height: auto)
+
+// Classical sober style
+#let style-1 = classical-board.with(
+  weak-stroke: (thickness: 0.25pt, paint: black, dash: "solid"),
+  strong-stroke: (thickness: 1pt, paint: black, dash: "solid"),
+  clue-draw-parallel-weak-strokes: true,
+  clue-draw-parallel-strong-strokes: true,
+  clue-draw-perpendicular-strokes: false,
+  clue-close-opposite-strokes: false,
+)
+
+// More modern variation of classical style
+#let style-2 = classical-board.with(
+  font: "Roboto",
+  weak-stroke: (thickness: 0.45pt, paint: navy, dash: "densely-dotted"),
+  strong-stroke: (thickness: 1pt, paint: navy, dash: "solid"),
+  clue-default-background: navy.lighten(95%).saturate(5%),
+  clue-draw-parallel-weak-strokes: true,
+  clue-draw-parallel-strong-strokes: true,
+  clue-draw-perpendicular-strokes: true,
+  clue-close-opposite-strokes: true,
+  // Stroke the corner cell to have a more square look
+  corner-cell-drawer: (height, width) => grid.cell(
+    rowspan: height,
+    colspan: width,
+    fill: navy.lighten(90%).saturate(10%),
+    stroke: (thickness: 1pt, paint: navy, dash: "solid"),
+    "",
+  ),
+  // Navy color instead of black as default
+  color-map: (
+    ..default-color-map,
+    "default": navy,
+  ),
+  // Crossed cells are replaced with a single diagonal line. Default fill is replaced with a smaller filled block
+  content-map: (
+    "0": block(height: 100%, width: 100%)[
+      #place(center + horizon, rotate(-45deg, line(length: 1em, stroke: (
+        thickness: 1pt,
+        paint: navy.lighten(50%),
+        cap: "round",
+      ))))
+    ],
+    "default": block(height: 70%, width: 70%, radius: 0.1em),
+  ),
+  // When the cell corresponds to a filled block, we apply the color as fill
+  cell-colorizer: (content, color, value) => {
+    set text(fill: color)
+    if (value != 0) {
+      set block(fill: color)
+      content
+    } else {
+      content
+    }
+  },
+  // We make the text for clues a bit smaller
+  clue-text-processor: value => text(0.8em, value),
+  clue-coloring: "background",
+)
+
+// The boards with solution shown
+
+#style-1(
+  show-solution: true,
+  board-monocolor,
+)
+
+#pagebreak()
+
+#style-2(
+  show-solution: true,
+  board-monocolor,
+)
+
+#pagebreak()
+
+#modern-board(
+  show-solution: true,
+  board-monocolor,
+)
+
+#pagebreak()
+
+#style-1(
+  show-solution: true,
+  clue-omit-default-background: false,
+  board-multicolor,
+)
+
+#pagebreak()
+
+#style-2(
+  clue-omit-default-background: false,
+  show-solution: true,
+  board-multicolor,
+)
+
+#pagebreak()
+
+#modern-board(
+  clue-omit-default-background: false,
+  show-solution: true,
+  board-multicolor,
+)
+
+#pagebreak()
+
+// The boards with solution hidden
+
+#style-1(
+  show-solution: false,
+  board-monocolor,
+)
+
+#pagebreak()
+
+#style-2(
+  show-solution: false,
+  board-monocolor,
+)
+
+#pagebreak()
+
+#modern-board(
+  show-solution: false,
+  board-monocolor,
+)
+
+#pagebreak()
+
+// Example of only solution shown, without clues, in a compact manner
+
+#let solution-style = classical-board.with(
+  show-solution: true,
+  hide-clues: true,
+  weak-stroke: none,
+  strong-stroke: 1pt + red,
+  cell-size: 4pt,
+  content-map: (
+    "0": none,
+    "1": "fill",
+  ),
+)
+
+// Example of creating the board only from the clues
+
+#solution-style(
+  board-monocolor,
+)
+
+#pagebreak()
+
+// Example with manual clues and no predefined solution shown.
+#style-1(
+  show-solution: false,
+  none,
+  column-clues: (
+    (2, 1),
+    (1, 1),
+    (1, 3),
+    (1, 2),
+    (1, 1),
+  ),
+  row-clues: (
+    (2,),
+    (1, 2),
+    (3,),
+    (3,),
+    (1, 2),
+  ),
+)
