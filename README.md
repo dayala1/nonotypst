@@ -14,8 +14,6 @@ The board matrix is a 2D array where 0s represent empty cells (not included in t
 
 The matrix can be constructed manually, or parsed from plain text using the `text-to-matrix` function, which accepts a string representation of the board in which each line corresponds to a row, and each cell is represented by a character (by default "1" for filled, "0" for empty):
 
-```
-
 ## Gallery
 
 ### Solved boards
