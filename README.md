@@ -1,4 +1,4 @@
-# nonotypst
+# nonodraw
 
 Typst helpers for rendering nonogram boards in a flexible manner, offering a core, `draw-board`, which computes or accepts clues, lays out the board, and delegates the actual drawing of puzzle and clue cells to callbacks. Two ready-to-use implementations are included:
 
@@ -21,23 +21,23 @@ The following examples have been generated from the code in the [examples](examp
 ### Solved boards
 
 <p>
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2001.svg" alt="Solved monocolor board in classical style" width="32%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2002.svg" alt="Solved monocolor board in tweaked classical style" width="32%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2003.svg" alt="Solved monocolor board in modern style" width="32%">
+  <img src="./examples/Example%2001.svg" alt="Solved monocolor board in classical style" width="32%">
+  <img src="./examples/Example%2002.svg" alt="Solved monocolor board in tweaked classical style" width="32%">
+  <img src="./examples/Example%2003.svg" alt="Solved monocolor board in modern style" width="32%">
 </p>
 
 <p>
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2004.svg" alt="Solved multicolor board in classical style" width="32%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2005.svg" alt="Solved multicolor board in tweaked classical style" width="32%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2006.svg" alt="Solved multicolor board in modern style" width="32%">
+  <img src="./examples/Example%2004.svg" alt="Solved multicolor board in classical style" width="32%">
+  <img src="./examples/Example%2005.svg" alt="Solved multicolor board in tweaked classical style" width="32%">
+  <img src="./examples/Example%2006.svg" alt="Solved multicolor board in modern style" width="32%">
 </p>
 
 ### Unsolved boards
 
 <p>
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2007.svg" alt="Unsolved monocolor board in classical style" width="32%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2008.svg" alt="Unsolved monocolor board in tweaked classical style" width="32%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2009.svg" alt="Unsolved monocolor board in modern style" width="32%">
+  <img src="./examples/Example%2007.svg" alt="Unsolved monocolor board in classical style" width="32%">
+  <img src="./examples/Example%2008.svg" alt="Unsolved monocolor board in tweaked classical style" width="32%">
+  <img src="./examples/Example%2009.svg" alt="Unsolved monocolor board in modern style" width="32%">
 </p>
 
 ### Only solution
@@ -45,7 +45,7 @@ The following examples have been generated from the code in the [examples](examp
 The following example was created by hiding the clues and simplifying the strokes to obtain a result that could be used as a compact solution rendering.
 
 <p>
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2010.svg" alt="Compact solution-only rendering" width="20%">
+  <img src="./examples/Example%2010.svg" alt="Compact solution-only rendering" width="20%">
 </p>
 
 ### Full clue customization
@@ -53,7 +53,7 @@ The following example was created by hiding the clues and simplifying the stroke
 The following example was created by customizing the clue content drawer to show the clue counts inside the clue cells as well as the solution. The result is a typical nonogram with triangles.
 
 <p>
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2014.svg" alt="Compact solution-only rendering" width="50%"> </br>
+  <img src="./examples/Example%2014.svg" alt="Compact solution-only rendering" width="50%"> </br>
   <small>Source: fragment from the cover of "Trianograms".</small>
 </p>
 
@@ -63,9 +63,9 @@ The following example was created by customizing the clue content drawer to show
 In order: board rendered with manual clues, board rendered with a solution matrix but only partially shown using a display mask and marked clues, and board rendered from a matrix parsed from plain text.
 
 <p>
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2011.svg" alt="Board rendered from manual clues" width="15%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2012.svg" alt="Partial board with masked solution and marked clues" width="15%">
-  <img src="https://raw.githubusercontent.com/dayala1/nonotypst/refs/heads/main/examples/Example%2013.svg" alt="Board rendered from a matrix parsed from plain text" width="15%">
+  <img src="./examples/Example%2011.svg" alt="Board rendered from manual clues" width="15%">
+  <img src="./examples/Example%2012.svg" alt="Partial board with masked solution and marked clues" width="15%">
+  <img src="./examples/Example%2013.svg" alt="Board rendered from a matrix parsed from plain text" width="15%">
 </p>
 
 ## Usage
