@@ -198,6 +198,8 @@
   marked-row-clues: ((0,0), (1,0), (4,0), (4,1)),
 )
 
+#pagebreak()
+
 // Example using matrix generated from text.
 #classical-board(
   show-solution: true,
