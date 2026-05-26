@@ -16,6 +16,8 @@ The matrix can be constructed manually, or parsed from plain text using the `tex
 
 ## Gallery
 
+The following examples have been generated from the code in the [examples](examples/examples.typ) file. The examples showcase different styles, configurations, and customizations that can be achieved with the package.
+
 ### Solved boards
 
 <p>
